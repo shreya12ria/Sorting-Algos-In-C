@@ -1,11 +1,14 @@
 #include <stdio.h>
 
 void bubblesort(int a[],int n){
-    int i,j;
-    for(i=0;i<n-1;i++){
+    int i,j,flag=1;
+    for(i=0;i<n-1 && flag;i++){
+        flag=0;
         for(j=0;j<n-1-i;j++){
-            if(a[j]>a[j+1])
+            if(a[j]>a[j+1]){
                 swap(&a[j],&a[j+1]);
+                flag=1;
+            }
         }
     }
 }
